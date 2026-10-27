@@ -1,0 +1,15 @@
+* text=auto
+*.md text eol=lf
+*.py text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.csv text eol=lf
+*.png binary
+*.txt text eol=lf
+
+# Conservar los bytes originales de los artefactos, incluidos CSV con CRLF.
+evidence/** -text

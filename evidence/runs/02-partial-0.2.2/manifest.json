@@ -1,0 +1,159 @@
+{
+  "version": "0.2.2",
+  "started_utc": "2026-10-27T19:52:13.891970+00:00",
+  "synthetic_no_llm": false,
+  "backend": {
+    "requested_model": "qwen2.5:7b",
+    "local_model": {
+      "name": "qwen2.5:7b",
+      "model": "qwen2.5:7b",
+      "modified_at": "2026-10-27T13:05:31.065745455-05:00",
+      "size": 4683087332,
+      "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "7.6B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 32768,
+        "embedding_length": 3584,
+        "runner": "ggml"
+      },
+      "capabilities": [
+        "completion",
+        "tools"
+      ]
+    },
+    "model_capabilities": [
+      "completion",
+      "tools"
+    ],
+    "model_details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "7.6B",
+      "quantization_level": "Q4_K_M"
+    },
+    "server": {
+      "version": "0.40.11"
+    },
+    "base_url": "http://127.0.0.1:11434",
+    "temperature": 0.0,
+    "num_predict": 800,
+    "num_ctx": 8192,
+    "timeout_seconds": 180
+  },
+  "python": "3.14.8 (main, Oct  1 2026, 00:00:00) [GCC 16.2.1 20260819 (Red Hat 16.2.1-2)]",
+  "platform": "Linux-7.2.11-200.fc44.x86_64-x86_64-with-glibc2.43",
+  "configs": [
+    "C0",
+    "C2",
+    "C2P"
+  ],
+  "config_definitions": {
+    "C0": {
+      "hardened": false,
+      "spotlight": false,
+      "policy": false,
+      "canary_filter": false
+    },
+    "C2": {
+      "hardened": true,
+      "spotlight": true,
+      "policy": false,
+      "canary_filter": false
+    },
+    "C2P": {
+      "hardened": true,
+      "spotlight": true,
+      "policy": true,
+      "canary_filter": false
+    }
+  },
+  "corpus_sha256": "157c60a951c6e1ef563add535d45ba06bb927d47399deaceb881b0ab9825e7c9",
+  "source_sha256": {
+    "__init__.py": "dac299e7cd16f05c33f74c8cc592d10eb4be5add11c876f3aef4522fad48d785",
+    "__main__.py": "2164c080e38110a8b4e28d6e963f40ae819f1ddc4c35898fb2232aad1ac99660",
+    "core.py": "a541e8b38cefba78c08ea1d99b02ebc677c0b5e2ed79c3b3a438668e28a297df",
+    "dataset.py": "5b16dfeae84f7d956395e1434b7eb18afa12b5f648bba8c803efea9ac237ca60",
+    "diagnostics.py": "d1b011e70650251b6c75584d8bd683f525d7b2d2d5ea577a2e3f7f2888d5cf34",
+    "ollama_backend.py": "b4f6287122a5434e566fbf219e78f89dc436b8148692cb56b1e3f897190a87c6",
+    "reporting.py": "840483ecf9372dbb8e1e20b701f804c7e83c41132b77009535b2868f78f560e0"
+  },
+  "selected_case_ids": [
+    "B-summary-01",
+    "B-lookup-01",
+    "B-mail-01"
+  ],
+  "split": "dev",
+  "seed": 42,
+  "repeats": 1,
+  "case_kind": "benign",
+  "max_turns": 10,
+  "max_tool_calls": 16,
+  "planned_trials": 9,
+  "completed": false,
+  "independence_note": "Repeticiones agrupadas por caso; no son observaciones independientes.",
+  "finished_utc": "2026-10-27T19:56:01.362023+00:00",
+  "recorded_trials": 4,
+  "interrupted": true,
+  "backend_after": {
+    "requested_model": "qwen2.5:7b",
+    "local_model": {
+      "name": "qwen2.5:7b",
+      "model": "qwen2.5:7b",
+      "modified_at": "2026-10-27T13:05:31.065745455-05:00",
+      "size": 4683087332,
+      "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "7.6B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 32768,
+        "embedding_length": 3584,
+        "runner": "ggml"
+      },
+      "capabilities": [
+        "completion",
+        "tools"
+      ]
+    },
+    "model_capabilities": [
+      "completion",
+      "tools"
+    ],
+    "model_details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "7.6B",
+      "quantization_level": "Q4_K_M"
+    },
+    "server": {
+      "version": "0.40.11"
+    },
+    "base_url": "http://127.0.0.1:11434",
+    "temperature": 0.0,
+    "num_predict": 800,
+    "num_ctx": 8192,
+    "timeout_seconds": 180
+  },
+  "model_digest_unchanged": true,
+  "model_identity_verified": true
+}

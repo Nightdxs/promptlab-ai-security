@@ -1,0 +1,16 @@
+{
+  "cases": 36,
+  "kinds": {
+    "attack": 24,
+    "benign": 12
+  },
+  "channels": {
+    "document": 8,
+    "database": 8,
+    "direct": 8,
+    "none": 12
+  },
+  "splits": {
+    "dev": 36
+  }
+}

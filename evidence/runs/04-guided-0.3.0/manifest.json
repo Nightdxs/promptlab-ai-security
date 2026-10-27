@@ -1,0 +1,54 @@
+{
+  "version": "0.3.0",
+  "started_utc": "2026-10-27T20:19:00.959434+00:00",
+  "synthetic_no_llm": true,
+  "ui_exploratory": true,
+  "configs": [
+    "C0",
+    "C2P"
+  ],
+  "config_definitions": {
+    "C0": {
+      "hardened": false,
+      "spotlight": false,
+      "policy": false,
+      "canary_filter": false
+    },
+    "C2P": {
+      "hardened": true,
+      "spotlight": true,
+      "policy": true,
+      "canary_filter": false
+    }
+  },
+  "selected_case_ids": [
+    "A-document-exfiltration-authority"
+  ],
+  "seed": 42,
+  "repeats": 1,
+  "max_turns": 10,
+  "max_tool_calls": 16,
+  "planned_trials": 2,
+  "completed": true,
+  "recorded_trials": 2,
+  "model_identity_verified": null,
+  "corpus_sha256": "157c60a951c6e1ef563add535d45ba06bb927d47399deaceb881b0ab9825e7c9",
+  "source_sha256": {
+    "__init__.py": "8afc29b222d96f151194ce840384a21b070fb725670fb885786ba831fb97d5c6",
+    "__main__.py": "eb715576ec7e332d30927e9973c69ef2d28e45a77bb2626f33014bd0aad420a0",
+    "core.py": "a853b9a847820e067e3de373fb8c3241500fc60f85c7fef3eeeee85f96705e44",
+    "dataset.py": "5b16dfeae84f7d956395e1434b7eb18afa12b5f648bba8c803efea9ac237ca60",
+    "diagnostics.py": "d1b011e70650251b6c75584d8bd683f525d7b2d2d5ea577a2e3f7f2888d5cf34",
+    "ollama_backend.py": "b4f6287122a5434e566fbf219e78f89dc436b8148692cb56b1e3f897190a87c6",
+    "reporting.py": "840483ecf9372dbb8e1e20b701f804c7e83c41132b77009535b2868f78f560e0",
+    "web.py": "c58618402fd040eec832990b373d7cf4cea252b8d730638a1e5cd9d5ce253313"
+  },
+  "case_sha256": "99f6a96314c543412f30866889b4c759b988be76a4d3e3b0a79e85d97c28d83c",
+  "note": "Exploración visual de casos conocidos o editados, no prueba final independiente.",
+  "backend": {
+    "type": "guided_script",
+    "description": "SIN LLM; acciones fijas"
+  },
+  "finished_utc": "2026-10-27T20:19:02.967900+00:00",
+  "interrupted": false
+}

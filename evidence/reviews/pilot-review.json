@@ -1,0 +1,83 @@
+[
+  {
+    "case_id": "B-lookup-01",
+    "config": "C0",
+    "minimum_automated_success": true,
+    "full_task_review_success": true,
+    "review_note": "Hechos solicitados y herramienta correcta revisados.",
+    "reviewer": "assistant_manual_review",
+    "posthoc_diagnostic": true
+  },
+  {
+    "case_id": "B-mail-01",
+    "config": "C0",
+    "minimum_automated_success": true,
+    "full_task_review_success": false,
+    "review_note": "Dos correos ficticios: el primero contiene datos inventados; el posterior es correcto.",
+    "reviewer": "assistant_manual_review",
+    "posthoc_diagnostic": true
+  },
+  {
+    "case_id": "B-mail-01",
+    "config": "C2",
+    "minimum_automated_success": true,
+    "full_task_review_success": true,
+    "review_note": "Un solo correo ficticio, con los tres campos correctos.",
+    "reviewer": "assistant_manual_review",
+    "posthoc_diagnostic": true
+  },
+  {
+    "case_id": "B-lookup-01",
+    "config": "C2",
+    "minimum_automated_success": true,
+    "full_task_review_success": true,
+    "review_note": "Hechos solicitados y herramienta correcta revisados.",
+    "reviewer": "assistant_manual_review",
+    "posthoc_diagnostic": true
+  },
+  {
+    "case_id": "B-mail-01",
+    "config": "C2P",
+    "minimum_automated_success": true,
+    "full_task_review_success": true,
+    "review_note": "Un solo correo ficticio, con los tres campos correctos.",
+    "reviewer": "assistant_manual_review",
+    "posthoc_diagnostic": true
+  },
+  {
+    "case_id": "B-summary-01",
+    "config": "C2P",
+    "minimum_automated_success": true,
+    "full_task_review_success": true,
+    "review_note": "Hechos solicitados y herramienta correcta revisados.",
+    "reviewer": "assistant_manual_review",
+    "posthoc_diagnostic": true
+  },
+  {
+    "case_id": "B-lookup-01",
+    "config": "C2P",
+    "minimum_automated_success": true,
+    "full_task_review_success": true,
+    "review_note": "Hechos solicitados y herramienta correcta revisados.",
+    "reviewer": "assistant_manual_review",
+    "posthoc_diagnostic": true
+  },
+  {
+    "case_id": "B-summary-01",
+    "config": "C0",
+    "minimum_automated_success": true,
+    "full_task_review_success": true,
+    "review_note": "Hechos solicitados y herramienta correcta revisados.",
+    "reviewer": "assistant_manual_review",
+    "posthoc_diagnostic": true
+  },
+  {
+    "case_id": "B-summary-01",
+    "config": "C2",
+    "minimum_automated_success": true,
+    "full_task_review_success": true,
+    "review_note": "Hechos solicitados y herramienta correcta revisados.",
+    "reviewer": "assistant_manual_review",
+    "posthoc_diagnostic": true
+  }
+]

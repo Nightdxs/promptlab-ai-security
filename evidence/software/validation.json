@@ -1,0 +1,33 @@
+{
+  "executed_utc": "2026-10-27T21:16:12.085741+00:00",
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "working_directory": "repository root",
+  "python_version": "3.14.8",
+  "system": "Linux",
+  "architecture": "x86_64",
+  "distribution": "Fedora Linux 44 (KDE Plasma Desktop Edition)",
+  "returncode": 0,
+  "tests_run": 75,
+  "duration_seconds": 4.181,
+  "scope": "Software tests with controlled backends; no LLM inference.",
+  "auxiliary_commands": [
+    {
+      "file": "corpus-inspect.json",
+      "returncode": 0
+    },
+    {
+      "file": "regressions.json",
+      "returncode": 0
+    }
+  ],
+  "github_actions_executed": false
+}

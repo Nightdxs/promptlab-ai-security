@@ -1,0 +1,11 @@
+{
+  "method": "git checkout-index into a temporary clean directory",
+  "verification_exit_code": 0,
+  "verification_output": "OK: 108 archivos verificados; 5 lotes; resultados 6/9 y 9/9 mínimos, revisión posterior 8/9.\nLas evidencias con LLM son benignas; la demo adversarial está identificada como programada.",
+  "csv_sample": "evidence/runs/03-benign-0.2.3/summary.csv",
+  "csv_working_sha256": "6ab93f7f864d5e89246cb7ad0d0ce2b64d52817a982d21360e734b87a5060148",
+  "csv_index_sha256": "6ab93f7f864d5e89246cb7ad0d0ce2b64d52817a982d21360e734b87a5060148",
+  "csv_bytes_identical": true,
+  "commit_created": false,
+  "remote_configured": false
+}

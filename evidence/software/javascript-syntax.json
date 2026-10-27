@@ -1,0 +1,12 @@
+{
+  "command": [
+    "node",
+    "--check",
+    "promptlab/web_assets/app.js"
+  ],
+  "node_version": "v24.22.1",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Syntax check; not a browser interaction test."
+}

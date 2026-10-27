@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PromptLab · Laboratorio de agentes</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23c8f264'/%3E%3Cpath d='M16 10H9v20h7m8-20h7v20h-7M22 9l-4 22' fill='none' stroke='%231b2528' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/"><span class="brandmark">[ / ]</span><span>PromptLab<span class="brand-sub">AGENT SECURITY LAB</span></span></a>
+    <div class="workspace-label">ESPACIO DE TRABAJO <span>LOCAL</span></div>
+    <nav aria-label="Navegación principal">
+      <button class="nav-item active" data-view="lab"><span class="nav-symbol">◈</span> Laboratorio <span class="nav-arrow">↗</span></button>
+      <button class="nav-item" data-view="history"><span class="nav-symbol">≡</span> Ejecuciones <span id="history-count" class="nav-count">0</span></button>
+      <button class="nav-item" data-view="help"><span class="nav-symbol">?</span> Cómo probar</button>
+    </nav>
+    <div class="sidebar-note"><div class="tiny-label">TU ENTORNO</div><strong>Un laboratorio.<br>Tres herramientas.</strong><p>Observa lo que el agente propone, lo que se permite y lo que realmente ocurre.</p><div class="tool-list"><span>documentos</span><span>SQLite</span><span>correo ficticio</span></div></div>
+    <div class="sidebar-bottom"><span class="status-dot"></span><span>Datos ficticios · Sin correo real</span><small id="version">PromptLab</small></div>
+  </aside>
+
+  <main>
+    <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> <strong id="breadcrumb-current">Laboratorio</strong></div><div class="server-chip"><span id="server-dot" class="status-dot muted"></span><span id="server-label">Comprobando Ollama…</span></div></header>
+    <section class="page-heading"><div><div class="eyebrow">SEGURIDAD DE AGENTES, PASO A PASO</div><h1 id="page-title">Prueba. Observa. Compara.</h1><p id="page-description">Explora cómo una instrucción cambia el comportamiento de un agente con herramientas.</p></div><span class="local-badge"><span class="status-dot"></span> Entorno local</span></section>
+
+    <div id="global-error" class="error-banner hidden" role="alert"></div>
+
+    <section id="lab-view" class="view">
+      <div class="workspace-grid">
+        <section class="panel editor-panel">
+          <div class="panel-heading"><div><span class="step-number">01</span><h2>Configura tu prueba</h2></div><span class="small-label">EXPLORACIÓN</span></div>
+          <div class="editor-body">
+            <label class="field-label" for="scenario">Escenario <span>01 / ENTRADA</span></label>
+            <select id="scenario"></select><p id="scenario-description" class="field-hint"></p>
+            <label class="field-label">Motor <span>02 / EJECUCIÓN</span></label>
+            <div class="mode-grid" role="group" aria-label="Motor de la prueba">
+              <button id="mode-guided" class="mode-card selected" data-mode="guided" aria-pressed="true"><strong>Demo guiada <span class="fast-tag">RÁPIDA</span></strong><span>Aprende con acciones fijas.</span></button>
+              <button id="mode-ollama" class="mode-card" data-mode="ollama" aria-pressed="false"><strong>Modelo local <span class="mode-icon">↗</span></strong><span>Decisiones de tu Ollama.</span></button>
+            </div>
+            <div id="mode-note" class="mode-note"><span class="note-dot"></span><span>Sin LLM. La secuencia está programada; no mide la vulnerabilidad de un modelo.</span></div>
+            <div id="model-field" class="hidden"><label class="field-label" for="model">Modelo local</label><input id="model" value="qwen2.5:7b" maxlength="120" spellcheck="false"></div>
+            <label class="field-label" for="user-task">Petición legítima</label><textarea id="user-task" rows="3" maxlength="4000" spellcheck="false"></textarea>
+            <div id="payload-field"><label class="field-label attack-label" for="payload">Contenido del atacante <span>NO CONFIABLE</span></label><textarea id="payload" class="payload" rows="5" maxlength="6000" spellcheck="false"></textarea></div>
+            <div class="field-hint" id="edit-hint">Activa Modelo local para editar y probar tus propios textos.</div>
+            <details class="preview-details"><summary>Ver los datos y permisos del escenario <span>↗</span></summary><div class="preview-content"><span id="data-label" class="tiny-label">DOCUMENTO BRIEFING</span><p id="fixture-preview"></p><span class="tiny-label">PERMISOS DE LA TAREA</span><div id="policy-preview"></div><p class="field-hint">Editar la petición no cambia los permisos de este escenario.</p></div></details>
+            <label class="field-label">Configuración <span>03 / DEFENSAS</span></label>
+            <div class="config-switch" role="group" aria-label="Configuraciones"><button data-config="compare" class="selected" aria-pressed="true">Comparar</button><button data-config="C0" aria-pressed="false">Solo C0</button><button data-config="C2P" aria-pressed="false">Solo C2P</button></div>
+            <div class="config-legend"><span><i class="config-dot baseline"></i>C0 · Base</span><span><i class="config-dot protected"></i>C2P · Prompt + permisos</span></div>
+            <button id="run-button" class="primary-button"><span id="run-label">Ejecutar prueba</span><span id="run-arrow">↗</span></button>
+            <button id="cancel-button" class="cancel-button hidden">Detener después de la llamada actual</button>
+            <p class="run-caption" id="run-caption">Dos configuraciones. El mismo caso y la misma semilla.</p>
+          </div>
+        </section>
+
+        <div class="observation-column">
+          <section class="intro-strip"><span class="strip-icon">↳</span><div><strong>Un texto puede proponer una acción.<br>El permiso decide si se ejecuta.</strong><p>Prueba el mismo escenario con y sin autorización en código.</p></div><span class="strip-tag">RED ↔ BLUE</span></section>
+          <section class="panel results-panel">
+            <div class="panel-heading"><div><span class="step-number">02</span><h2>Observa el resultado</h2></div><button id="download-button" class="text-button hidden">Descargar JSON ↓</button></div>
+            <div class="result-toolbar"><div class="result-tabs" role="group" aria-label="Vista del resultado"><button class="selected" data-tab="results">Resultado</button><button data-tab="timeline">Línea de acciones <span id="event-count">0</span></button></div><span id="run-state" class="state-chip">SIN EJECUTAR</span></div>
+            <div id="run-banner" class="run-banner hidden" role="status"></div>
+            <div id="empty-state" class="empty-state"><div class="flow-illustration"><span class="flow-node document-node">≡</span><span class="flow-line"></span><span class="flow-node agent-node">[ / ]</span><span class="flow-line"></span><span class="flow-node tool-node">⌘</span></div><div class="flow-labels"><span>Contenido</span><span>Agente</span><span>Herramientas</span></div><h3>El laboratorio está listo.</h3><p>Empieza con <strong>Documento intervenido</strong> y la demo guiada.<br>Verás qué ocurre antes y después de aplicar permisos.</p><button id="open-latest" class="secondary-button hidden">Ver mi último piloto real ↗</button><span class="empty-footnote">Los resultados aparecerán aquí, sin usar la terminal.</span></div>
+            <div id="result-cards" class="result-cards hidden"></div>
+            <div id="timeline" class="timeline hidden"></div>
+            <div id="result-note" class="result-note hidden"></div>
+          </section>
+          <div class="reading-key"><span class="tiny-label">CÓMO LEERLO</span><div><span class="key-dot proposed"></span> Propuesto por el agente</div><div><span class="key-dot done"></span> Ejecutado</div><div><span class="key-dot blocked"></span> Bloqueado</div></div>
+          <div class="bottom-note">El correo se registra en un buzón ficticio. Ninguna prueba envía mensajes reales.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="history-view" class="view hidden"><div class="panel history-panel"><div class="panel-heading"><div><span class="step-number">↺</span><h2>Tus ejecuciones guardadas</h2></div><button id="refresh-history" class="text-button">Actualizar ↻</button></div><p class="history-intro">Abre un lote para revisar sus respuestas, herramientas y buzón. Se mantienen los veredictos originales de cada versión.</p><div id="history-list"></div></div></section>
+
+    <section id="help-view" class="view hidden"><div class="help-grid"><article class="panel help-card"><span class="help-number">01</span><h2>Empieza con la demo</h2><p>Elige Documento intervenido, Demo guiada y Comparar. El laboratorio fuerza una secuencia: leer el briefing, intentar leer el secreto ficticio y registrar un correo. Así puedes entender los controles en segundos.</p><strong>La demo no utiliza un modelo de IA.</strong></article><article class="panel help-card"><span class="help-number">02</span><h2>Prueba tu modelo</h2><p>Activa Modelo local. Podrás editar la petición y el texto del atacante. Ollama decidirá qué herramientas propone. En CPU una respuesta puede tardar; el progreso se muestra en la línea de acciones.</p><strong>No se conecta a cuentas de correo.</strong></article><article class="panel help-card"><span class="help-number">03</span><h2>Sigue las acciones</h2><p>Una llamada propuesta todavía no es un efecto. Revisa el resultado de la herramienta y el buzón ficticio. Una corrección posterior no borra un correo incorrecto ya registrado.</p><strong>Observa la secuencia completa.</strong></article><article class="panel help-card"><span class="help-number">04</span><h2>Interpreta con cuidado</h2><p>“Completado” significa que terminó el ciclo. La utilidad automática comprueba un mínimo. Revisa también omisiones, contradicciones y efectos adicionales. Estas pruebas exploratorias no son un benchmark independiente.</p><strong>Un solo caso no demuestra seguridad general.</strong></article></div></section>
+    <footer>PromptLab <span>Laboratorio académico de seguridad de agentes de IA</span><span>LOCAL / DATOS FICTICIOS</span></footer>
+  </main>
+</body>
+</html>

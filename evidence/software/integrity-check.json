@@ -1,0 +1,11 @@
+{
+  "positive_exit_code": 0,
+  "negative_exit_code": 1,
+  "altered_copy_file": "evidence/runs/03-benign-0.2.3/trials.jsonl",
+  "alteration": "One LF appended to a temporary copy.",
+  "negative_result": "ERROR: Hash distinto: evidence/runs/03-benign-0.2.3/trials.jsonl",
+  "original_file_sha256_before": "3c652c0b9803046efddff6837b2e9392f6abfa9c9cb4414cd02222fd8fbf580f",
+  "original_file_sha256_after": "3c652c0b9803046efddff6837b2e9392f6abfa9c9cb4414cd02222fd8fbf580f",
+  "original_evidence_modified": false,
+  "verifier_sha256": "77c7796632f514d05b87b1a4a4f47eb4dc1d00d1984fa046078b05901818ebbe"
+}

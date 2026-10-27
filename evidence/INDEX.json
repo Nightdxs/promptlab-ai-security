@@ -1,0 +1,47 @@
+{
+  "format_version": 1,
+  "curated_at": "2026-10-27",
+  "runs": [
+    {
+      "id": "01-benign-0.2.1",
+      "kind": "local_llm",
+      "software_version": "0.2.1",
+      "complete": true,
+      "recorded_trials": 9,
+      "redacted": false
+    },
+    {
+      "id": "02-partial-0.2.2",
+      "kind": "local_llm",
+      "software_version": "0.2.2",
+      "complete": false,
+      "recorded_trials": 4,
+      "redacted": false
+    },
+    {
+      "id": "03-benign-0.2.3",
+      "kind": "local_llm",
+      "software_version": "0.2.3",
+      "complete": true,
+      "recorded_trials": 9,
+      "redacted": false
+    },
+    {
+      "id": "04-guided-0.3.0",
+      "kind": "scripted_demo",
+      "software_version": "0.3.0",
+      "complete": true,
+      "recorded_trials": 2,
+      "redacted": false
+    },
+    {
+      "id": "05-ui-lookup-0.3.0",
+      "kind": "local_llm",
+      "software_version": "0.3.0",
+      "complete": true,
+      "recorded_trials": 1,
+      "redacted": false
+    }
+  ],
+  "note": "Manifiestos y trazas conservados byte a byte. Sin correos reales ni datos del documento académico personal. La revisión adicional conserva su procedencia."
+}

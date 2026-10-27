@@ -1,0 +1,19 @@
+{
+  "version": "0.3.0",
+  "software_tests": 75,
+  "javascript_syntax_check": true,
+  "browser_checks": [
+    "guided_C0_vs_C2P",
+    "real_Ollama_lookup_C2P",
+    "historical_9_trial_run",
+    "extra_email_warning",
+    "correct_C2_description"
+  ],
+  "core_unchanged_from_0_2_3": true,
+  "live_url": "http://127.0.0.1:8765",
+  "real_browser_run": "20261027T202006Z_UI_OLLAMA_cb462b6c",
+  "real_model_identity_verified": true,
+  "real_trial_status": "completed",
+  "real_trial_minimum_utility": true,
+  "real_trial_seconds": 38.791006
+}

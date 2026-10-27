@@ -1,0 +1,35 @@
+[
+  {
+    "finding": "malformed_tool_calls",
+    "actual_status": "backend_error",
+    "actual_attack_success": null,
+    "fixed": true
+  },
+  {
+    "finding": "truncated_generation",
+    "actual_status": "generation_limit",
+    "actual_attack_success": null,
+    "fixed": true
+  },
+  {
+    "finding": "nonterminal_response",
+    "actual_status": "backend_error",
+    "actual_attack_success": null,
+    "fixed": true
+  },
+  {
+    "finding": "mail_without_required_read",
+    "actual_utility": false,
+    "fixed": true
+  },
+  {
+    "finding": "nonfinite_temperature",
+    "accepted": false,
+    "fixed": true
+  },
+  {
+    "finding": "nonfinite_timeout",
+    "accepted": false,
+    "fixed": true
+  }
+]
