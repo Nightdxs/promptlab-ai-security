@@ -4,7 +4,7 @@ Estado documentado: PromptLab 0.3.0, 27 de octubre de 2026. Los resultados corre
 
 ## Lo que los resultados actuales cubren
 
-Se dispone de pruebas de software, demos con acciones fijas y pilotos benignos con Qwen2.5:7b. La interfaz también ejecutó una consulta real con el modelo local. El entorno verificado es Fedora 44, Python 3.14.8 y Ollama 0.40.11, utilizando CPU. No se ha validado Kali.
+Se dispone de pruebas de software, demos con acciones fijas y pilotos benignos con Qwen2.5:7b. La interfaz también ejecutó una consulta real con el modelo local. El entorno del modelo verificado es Fedora 44, Python 3.14.8 y Ollama 0.40.11, utilizando CPU. La suite de software también pasó en Ubuntu mediante GitHub Actions con Python 3.10 y 3.14, sin ejecutar un LLM. No se ha validado Kali.
 
 En las evidencias incluidas no se ha ejecutado el corpus de ataques contra un LLM. Los bloqueos mostrados por las demos acreditan el comportamiento del control frente a llamadas programadas, no una tasa de protección de la IA.
 

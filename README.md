@@ -10,7 +10,7 @@ El proyecto usa Python, SQLite y Ollama. Las herramientas leen documentos de pru
 
 ## Probarlo
 
-Necesita Python 3.10 o posterior. El programa y sus pruebas usan la biblioteca estándar; no hay paquetes Python que instalar. El entorno comprobado es Fedora 44 con Python 3.14.8.
+Necesita Python 3.10 o posterior. El programa y sus pruebas usan la biblioteca estándar; no hay paquetes Python que instalar. La ejecución con el modelo se comprobó en Fedora 44 con Python 3.14.8; la suite de software también pasó en GitHub Actions con Python 3.10 y 3.14 sobre Ubuntu.
 
 Abre una terminal en la carpeta que contiene este README:
 
@@ -68,7 +68,7 @@ python3 tools/verify_evidence.py
 
 En [`evidence/`](evidence/README.md) están los lotes seleccionados, manifiestos, código de cada versión, revisión adicional y registro de validación. El verificador comprueba los hashes y la coherencia básica de los resultados. Los hashes permiten detectar cambios respecto al paquete; no sustituyen una validación independiente.
 
-El flujo de GitHub Actions está configurado para Python 3.10 y 3.14. Sus ejecuciones en GitHub se comprobarán después de subir el repositorio; el registro incluido corresponde a pruebas locales. Véase [PRUEBAS.md](docs/PRUEBAS.md).
+El flujo de GitHub Actions pasó con Python 3.10 y 3.14: **75 pruebas en cada versión**, además de corpus, regresiones e integridad. La [ejecución verificada](https://github.com/Nightdxs/promptlab-ai-security/actions/runs/40593136228) corresponde al commit inicial del proyecto. Se conservan por separado el registro local y la evidencia de CI. Véase [PRUEBAS.md](docs/PRUEBAS.md).
 
 ## Documentación
 

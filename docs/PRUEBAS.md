@@ -55,4 +55,6 @@ El flujo [`tests.yml`](../.github/workflows/tests.yml) prepara Python 3.10 y 3.1
 
 Las acciones oficiales se fijaron a los commits devueltos por las referencias consultadas el 27/10/2026. Su procedencia se conserva en [`ci-action-refs.json`](../evidence/software/ci-action-refs.json). Referencias: [actions/checkout](https://github.com/actions/checkout) y [actions/setup-python](https://github.com/actions/setup-python).
 
-El flujo aún no tiene una ejecución verificada en GitHub. El resultado local de Python 3.14.8 y el futuro resultado de la matriz de CI son evidencias distintas.
+El flujo pasó en GitHub con Python 3.10 y 3.14: 75 pruebas de software en cada job, corpus, regresiones y verificación de evidencias. La [ejecución 40593136228](https://github.com/Nightdxs/promptlab-ai-security/actions/runs/40593136228) valida el commit `3a3dcc006080edf63cd857d473494eb082745e3c`.
+
+Se conserva el resultado y un extracto de los logs en [`github-ci.json`](../evidence/software/github-ci.json). Ese archivo documenta la ejecución indicada, no se presenta como un test sobre versiones futuras. La validación local y la matriz de CI son evidencias separadas. Ninguna ejecuta un modelo real.

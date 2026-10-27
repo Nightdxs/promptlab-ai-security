@@ -1,48 +1,38 @@
-# Preparar la subida a GitHub
+# Publicación y comprobaciones
 
-El paquete contiene código, pruebas, documentación y una selección de evidencias. No incluye pesos del modelo, resultados nuevos de trabajo, el PDF académico personal ni credenciales. La carpeta `results/` está excluida de Git; las evidencias revisadas están en `evidence/`.
+El repositorio público es [Nightdxs/promptlab-ai-security](https://github.com/Nightdxs/promptlab-ai-security). Contiene código, pruebas, documentación y evidencias seleccionadas. Los pesos del modelo, archivos personales y resultados nuevos de trabajo no forman parte del repositorio.
 
-## Antes del primer commit
-
-Desde la carpeta del proyecto:
+## Obtener una copia
 
 ```bash
+git clone https://github.com/Nightdxs/promptlab-ai-security.git
+cd promptlab-ai-security
 python3 tools/verify_evidence.py
-git init -b main
-git add .
+```
+
+Clonar conserva el historial real de GitHub. Los paquetes ZIP no incluyen `.git`; no son una copia del historial. Para ejecutar el programa, sigue [EJECUCION.md](EJECUCION.md).
+
+## Comprobaciones realizadas
+
+- El README y la captura se publicaron junto con el código.
+- Se descargó una copia desde GitHub y se verificaron sus evidencias.
+- GitHub Actions pasó con Python 3.10 y 3.14, con 75 pruebas en cada versión.
+- El commit y los jobs comprobados se conservan en [github-ci.json](../evidence/software/github-ci.json).
+
+Los metadatos de CI identifican el commit que validaron. Los registros locales anteriores permanecen intactos y no se sustituyen por los de GitHub.
+
+## Cambios posteriores
+
+Antes de enviar cambios:
+
+```bash
+python3 -m unittest discover -s tests -v
+python3 -m scripts.reproduce_findings --expect-fixed
+python3 tools/verify_evidence.py
 git status
-git diff --cached --stat
+git diff
 ```
 
-La copia local preparada puede tener ya el repositorio inicializado y los archivos en staging. El ZIP no contiene `.git`, por lo que al descomprimirlo se inicia un repositorio nuevo. No se ha creado un historial de commits ni se han puesto fechas anteriores.
+No reemplaces las trazas de un lote por las de una ejecución nueva. Para añadir evidencia, conserva su origen y actualiza el índice y los checksums de forma explícita. El directorio `results/` sigue excluido de Git; la selección revisada está en `evidence/`.
 
-Revisa los archivos que entrarán en el commit. Los atributos de Git conservan los bytes de las evidencias; no normalices esos archivos con un editor. Los comandos de ejecución parten de la carpeta del README.
-
-## Repositorio remoto
-
-Crea o selecciona un repositorio vacío en tu cuenta y utiliza su URL real. El proyecto no tiene un propietario o remoto preconfigurado.
-
-Después de revisar el contenido y utilizar tu configuración de autor en Git:
-
-```bash
-git commit -m "Documentar PromptLab y sus evidencias"
-```
-
-Para introducir la URL sin dejar un usuario ficticio en el comando:
-
-```bash
-read -r -p "URL de tu repositorio: " promptlab_repo_url
-git remote add origin "$promptlab_repo_url"
-git push -u origin main
-```
-
-Si ese repositorio ya tiene contenido o un remoto configurado, revisa su historia y ramas antes de aplicar estos pasos. Este procedimiento parte de una copia nueva con un remoto vacío.
-
-## Después de subir
-
-- Abre el README y comprueba imagen y enlaces.
-- Revisa Actions: el workflow está configurado, pero no se entrega como una ejecución ya aprobada en GitHub.
-- Consulta los logs de cada versión de Python. El resultado local de 75 tests y el resultado del workflow son comprobaciones distintas.
-- Añade una descripción breve del repositorio, por ejemplo: `Laboratorio local de seguridad de agentes de IA con herramientas simuladas, trazas y evaluación reproducible.`
-
-La elección de una licencia queda pendiente del autor; este paquete no incluye `LICENSE`. Las referencias técnicas están en [REFERENCIAS.md](REFERENCIAS.md). La documentación evita atribuir resultados o funciones que todavía no existen.
+La elección de una licencia queda pendiente del autor; el repositorio no incluye `LICENSE`. Las referencias técnicas están en [REFERENCIAS.md](REFERENCIAS.md).

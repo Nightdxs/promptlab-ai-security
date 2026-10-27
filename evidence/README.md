@@ -35,7 +35,7 @@ La selección fue revisada buscando rutas personales, el identificador académic
 
 En [`software/`](software/) se guardan el log de la suite, los metadatos de su ejecución y las comprobaciones auxiliares. Los registros de software no son pruebas de resistencia de un LLM. La comprobación de interfaz de 2026-10-27 referencia por separado una consulta real y la demo programada.
 
-El flujo de GitHub Actions se entrega configurado. No hay una ejecución de CI en GitHub acreditada por estos archivos.
+La [ejecución de GitHub Actions](software/github-ci.json) conserva el commit validado, los jobs de Python 3.10/3.14 y extractos de sus logs: 75 pruebas correctas en cada versión. El campo `github_actions_executed: false` de `validation.json` pertenece al registro local anterior a la publicación; no se modifica para reinterpretarlo como un resultado de CI.
 
 ## Comprobar integridad
 

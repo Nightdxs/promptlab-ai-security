@@ -2,12 +2,13 @@
 
 Estas versiones corresponden al desarrollo local. No implican que existan releases o tags publicados en GitHub.
 
-## Sin publicar
+## Documentación del repositorio — 2026-10-27
 
 - Documentación reorganizada para el repositorio.
 - Cinco lotes seleccionados con manifiestos y snapshots.
 - Verificación de integridad y registro de pruebas locales.
-- Flujo de CI configurado; ejecución en GitHub pendiente.
+- Publicación en `Nightdxs/promptlab-ai-security`.
+- Flujo de CI verificado en GitHub: 75 pruebas en Python 3.10 y otras 75 en Python 3.14, sin inferencia de LLM.
 
 ## 0.3.0 — 2026-10-27
 

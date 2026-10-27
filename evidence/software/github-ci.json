@@ -1,0 +1,35 @@
+{
+  "repository": "Nightdxs/promptlab-ai-security",
+  "commit_sha": "3a3dcc006080edf63cd857d473494eb082745e3c",
+  "workflow_name": "Tests",
+  "run_id": 40593136228,
+  "run_url": "https://github.com/Nightdxs/promptlab-ai-security/actions/runs/40593136228",
+  "event": "push",
+  "status": "completed",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": 122502196385,
+      "name": "software (3.10)",
+      "conclusion": "success",
+      "tests_run": 75,
+      "log_excerpt": [
+        "2026-10-27T22:13:42.5398135Z Ran 75 tests in 4.570s",
+        "2026-10-27T22:13:42.8249699Z OK: 109 archivos verificados; 5 lotes; resultados 6/9 y 9/9 mínimos, revisión posterior 8/9."
+      ]
+    },
+    {
+      "id": 122502196751,
+      "name": "software (3.14)",
+      "conclusion": "success",
+      "tests_run": 75,
+      "log_excerpt": [
+        "2026-10-27T22:13:42.2650653Z Ran 75 tests in 4.680s",
+        "2026-10-27T22:13:42.6199975Z OK: 109 archivos verificados; 5 lotes; resultados 6/9 y 9/9 mínimos, revisión posterior 8/9."
+      ]
+    }
+  ],
+  "scope": "Software tests on GitHub-hosted Ubuntu runners with controlled backends; no LLM inference.",
+  "provenance": "Run and job status retrieved from GitHub Actions; excerpts selected from job logs without editing their contents.",
+  "note": "This record refers to the commit above. The original local validation record remains unchanged."
+}
